@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPreviewCard from '../components/BlogPreviewCard.astro'
+import avatar from '../images/image-avatar.webp'
+import illustration from '../images/illustration-article.svg'
+
+const cardInfo = [
+	{
+		articleImg: illustration,
+		category: 'Learning',
+		datePublished: '21 Dec 2023',
+		title: 'HTML & CSS foundations',
+		description: 'These languages are the backbone of every website, defining structure, content, and presentation.',
+		author: 'Greg Hooper',
+		authorImg: avatar,
+	}
+]
+---
+
+<Layout title="Blog Preview Card">
+	<main class="min-h-screen flex items-center justify-center">
+		{ cardInfo.map(item => (
+			<BlogPreviewCard 
+			articleImg={item.articleImg}
+			category={item.category}
+			datePublished={item.datePublished}
+			title={item.title}
+			description={item.description}
+			author={item.author}
+			authorImg={item.authorImg} />
+		))}
+	</main>
+</Layout>
+
+
