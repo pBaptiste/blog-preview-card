@@ -3,9 +3,9 @@
     const { articleImg, category, datePublished, title, description, author, authorImg } = Astro.props
 ---
 
-<article class="w-[327px] md:w-[384px] h-[501px] md:h-[522px] p-6 flex flex-col gap-6 rounded-[20px] border border-[#111] bg-white shadow-preview-card"> 
+<article class="max-w-[327px] md:max-w-[384px] max-h-[501px] md:max-h-[522px] p-6 flex flex-col gap-6 rounded-[20px] border border-[#111] bg-white shadow-preview-card"> 
     <div class="w-full h-[200px]">
-        <Image src={articleImg} alt={'illustration for the blog titled "' + title + '."'} class="rounded-[10px] h-full object-cover" loading="eager"/>
+        <Image src={articleImg} alt='' class="rounded-[10px] h-full object-cover" loading="eager"/>
     </div>
     <div class="flex flex-col gap-3">
         <span class="bg-background px-3 py-1 max-w-fit rounded-[4px] font-figtree-static font-extrabold text-xs md:text-sm text-text-main">{category}</span>
@@ -14,7 +14,7 @@
         <p class="text-text-secondary text-sm md:text-base font-figtree-var font-medium leading-[150%]">{description}</p>
     </div>
     <div class="flex items-center gap-3">
-        <Image src={authorImg} alt={author + "'s profile picture"} width={32} height={32} class="rounded-[32px]"/>
+        <Image src={authorImg} alt={author + "'s headshot"} width={32} height={32} class="rounded-[32px]"/>
         <p class="text-text-main text-sm md:text-sm font-figtree-static font-extrabold leading-[150%]">{author}</p>
     </div>
 </article>
